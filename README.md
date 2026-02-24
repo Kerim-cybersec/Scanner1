@@ -1,8 +1,10 @@
 ```text
-  ___                                _ 
- / __| __ __ _ _ _  _ _  ___ _ _    / |
- \__ \/ _/ _` | ' \| ' \/ -_) '_|   | |
- |___/\__\__,_|_||_|_||_|\___|_|    |_|
+  _____                                         __ 
+ / ____|                                       /_ |
+| (___   ___ __ _ _ __  _ __   ___ _ __         | |
+ \___ \ / __/ _` | '_ \| '_ \ / _ \ '__|        | |
+ ____) | (_| (_| | | | | | | |  __/ |           | |
+|_____/ \___\__,_|_| |_|_| |_|\___|_|           |_|
 
 # Custom port scanner tool project
 This is a project I built as part of my Cybersecurity Apprenticeship. It's a Python script that hunts for open ports and flags potential security risks.
@@ -23,3 +25,4 @@ I wanted to move beyond just using tools like Nmap and actually understand how T
 
 ## A quick warning
 I built this for my own learning and for ethical testing. Please do not use this tool to scan networks you don't own. That's a quick way to get into trouble with your ISP :D 
+
