@@ -5,12 +5,12 @@ import time
 import sys
 
 # --- CONFIG ---
-TARGET = "127.0.0.1" 
+TARGET = "127.0.0.1" #change target here if you need to, currently it is 127.0.0.1, also known as your local host
 THREADS = 100 
 PORT_RANGE = range(1, 10001) 
 TOTAL_PORTS = len(PORT_RANGE)
 
-# (I've abbreviated the DB here for space, keep your full 100+ port list in your version!)
+# (My PORT database)
 VULN_DB = {
     21: {"s": "FTP", "r": "HIGH", "n": "Cleartext creds."},
     22: {"s": "SSH", "r": "LOW", "n": "Secure remote access."},
@@ -82,7 +82,7 @@ VULN_DB = {
 print_lock = threading.Lock()
 queue = Queue()
 final_results = []
-processed_count = 0 # Track how many ports we've finished
+processed_count = 0 # To track how many ports finished
 
 def update_progress():
     """Calculates and prints a manual progress bar to the terminal."""
@@ -90,7 +90,7 @@ def update_progress():
     with print_lock:
         processed_count += 1
         percent = (processed_count / TOTAL_PORTS) * 100
-        # Create a bar like: [##########..........] 50%
+        # This gonna create a bar like: [##########..........] 50%
         bar_length = 30
         filled_length = int(bar_length * processed_count // TOTAL_PORTS)
         bar = '█' * filled_length + '-' * (bar_length - filled_length)
@@ -108,12 +108,12 @@ def scan_port(port):
             data = VULN_DB.get(port, {"s": "Unknown", "r": "INFO", "n": "Service detected."})
             res = (port, data['s'], data['r'], data['n'])
             final_results.append(res)
-            # We don't print "HIT" immediately anymore to avoid breaking the progress bar
+            # Here we wont print "HIT" immediately anymore to avoid breaking the progress bar 
     except:
         pass
     finally:
         s.close()
-        update_progress() # Update the bar after every port attempt
+        update_progress() # to update the bar after every port attempt
 
 def threader():
     while True:
@@ -162,4 +162,5 @@ if __name__ == "__main__":
         main()
     except KeyboardInterrupt:
         print("\n[!] User aborted.")
+
         sys.exit()
