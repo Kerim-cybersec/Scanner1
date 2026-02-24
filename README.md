@@ -1,11 +1,10 @@
-
-_____                                         __ 
+```text
+  _____                                         __ 
  / ____|                                       /_ |
 | (___   ___ __ _ _ __  _ __   ___ _ __         | |
  \___ \ / __/ _` | '_ \| '_ \ / _ \ '__|        | |
  ____) | (_| (_| | | | | | | |  __/ |           | |
 |_____/ \___\__,_|_| |_|_| |_|\___|_|           |_|
-
 
 # Custom port scanner tool project
 This is a project I built as part of my Cybersecurity Apprenticeship. It's a Python script that hunts for open ports and flags potential security risks.
